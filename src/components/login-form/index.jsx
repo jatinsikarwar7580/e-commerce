@@ -49,7 +49,7 @@ const LoginForm = () => {
     if (resp.status === 200) {
       localStorage.setItem("userData", JSON.stringify(resp.data));
       dispatch(setUserData(resp.data));
-      // navigate('/home')
+      
     } else {
       setErrorMessage(resp?.data?.message || "Error occured");
       setShowErrorPopup(true);
@@ -73,7 +73,7 @@ const LoginForm = () => {
         <div className="form-group">
           <label>Password*</label>
           <input
-            type="text"
+            type="password"
             {...register("password")}
             placeholder="Enter password here..."
           />
